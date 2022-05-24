@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import { fetchPokemon } from "../data/fetcher";
 import { Pokemon } from "../data/types/pokemon";
