@@ -1,18 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import SearchBar from "../components/SearchBar";
 import { fetchPokemon } from "../data/fetcher";
 import { Pokemon } from "../data/types/pokemon";
 
 export default function Home() {
-  const [name, setName] = useState("");
+  const [pokemon, setPokemon] = useState<Pokemon | undefined>(undefined);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const pokemon = await fetchPokemon(Math.floor(Math.random() * 100));
-      setName(`${pokemon.name}: ${pokemon.id}`);
-    };
+  // This code will be commented for a while, I'm focused on layout now lol
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const pokemon = await fetchPokemon(Math.floor(Math.random() * 100));
+  //     setPokemon(pokemon);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
-  return <h1 className="text-9xl font-bold">{name}</h1>;
+  // if (!pokemon) return <div>Loading...</div>;
+
+  return <SearchBar />;
 }
